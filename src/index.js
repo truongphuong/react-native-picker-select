@@ -9,6 +9,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import { TouchableOpacity as TouchableOpacityIOS } from 'react-native-gesture-handler';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash.isequal';
 import { defaultStyles } from './styles';
@@ -428,7 +429,7 @@ export default class RNPickerSelect extends PureComponent {
 
         return (
             <View style={[defaultStyles.viewContainer, style.viewContainer]}>
-                <TouchableOpacity
+                <TouchableOpacityIOS
                     testID="ios_touchable_wrapper"
                     onPress={() => {
                         this.togglePicker(true);
@@ -437,7 +438,7 @@ export default class RNPickerSelect extends PureComponent {
                     {...touchableWrapperProps}
                 >
                     {this.renderTextInputOrChildren()}
-                </TouchableOpacity>
+                </TouchableOpacityIOS>
                 <Modal
                     testID="ios_modal"
                     visible={showPicker}
